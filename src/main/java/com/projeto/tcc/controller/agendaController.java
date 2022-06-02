@@ -32,13 +32,13 @@ public class agendaController {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Agenda insertAgenda(@RequestBody Agenda a){
-        return this.service.insert(a);
+        return this.service.insertAgenda(a);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(code = HttpStatus.ACCEPTED)
     public Agenda updateAgenda(@NotNull @PathVariable("id") Long id, @RequestBody Agenda a){
-        return this.service.update(id,a);
+        return this.service.updateAgenda(id,a);
     }
 
     @DeleteMapping("/{id}")
