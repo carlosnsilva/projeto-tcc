@@ -1,11 +1,14 @@
 version: '3.3'
 services:
     db:
+        container_name: base_postgres
         image: postgres
         restart: always
         environment:
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=postgres
+             POSTGRES_DB: conclusao
+             POSTGRES_USER: postgres
+             POSTGRES_PASSWORD: postgres
+             TZ: America/Sao_Paulo
         ports:
             - '5432:5432'
             

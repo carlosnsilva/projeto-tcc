@@ -5,7 +5,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "Agenda")
+//@Table(name = "agenda")
 public class Agenda {
 
     @Id
