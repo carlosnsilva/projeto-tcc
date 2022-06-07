@@ -15,6 +15,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static io.restassured.RestAssured.given;
 
 @RunWith(SpringRunner.class)
@@ -102,4 +106,25 @@ public class abstractStep {
 
         return value;
     }
+
+    public String searchJson(String json, String type) throws IOException {
+        if(type.equals("request")){
+            return searchJsonRequest(json);
+        }else{
+            return searchJsonResponse(json);
+        }
+    }
+
+    private String searchJsonRequest(String json) throws IOException {
+        String jsonRequest = String.join("", Files.readAllLines(Paths.get("src/test/resources/payloads/request/"+json)));
+
+        return jsonRequest;
+    }
+
+    private String searchJsonResponse(String json) throws IOException {
+        String jsonResponse = String.join("", Files.readAllLines(Paths.get("src/test/resources/payloads/response/"+json)));
+
+        return jsonResponse;
+    }
+
 }
