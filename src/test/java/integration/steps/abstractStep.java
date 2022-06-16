@@ -10,11 +10,9 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

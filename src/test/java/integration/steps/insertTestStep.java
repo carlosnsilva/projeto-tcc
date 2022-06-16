@@ -2,7 +2,7 @@ package integration.steps;
 
 import io.restassured.response.Response;
 
-public class getAllTestStep extends abstractStep{
+public class insertTestStep extends abstractStep{
 
     private static final String ENDPOINT = "/agendas";
 
@@ -11,7 +11,7 @@ public class getAllTestStep extends abstractStep{
     private String statuscode;
 
 
-    public getAllTestStep() {
+    public insertTestStep() {
         super(ENDPOINT);
     }
 }

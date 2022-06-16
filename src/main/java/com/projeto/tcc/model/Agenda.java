@@ -2,10 +2,11 @@ package com.projeto.tcc.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-//@Table(name = "agenda")
 public class Agenda {
 
     @Id
@@ -15,7 +16,8 @@ public class Agenda {
     @NotNull
     private String nome;
 
-    @NotNull
+    @NotNull(message = "Campo descrição é obrigatório, por favor preencha")
+    @NotBlank(message = "Campo descrição é obrigatório, por favor preencha")
     private String descricao;
 
     @Email

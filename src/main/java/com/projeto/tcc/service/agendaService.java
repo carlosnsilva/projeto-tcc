@@ -1,5 +1,4 @@
 package com.projeto.tcc.service;
-
 import com.projeto.tcc.model.Agenda;
 import com.projeto.tcc.repository.agendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ public class agendaService {
 
     @Autowired
     private agendaRepository repository;
-
 
     public List<Agenda> getAll(){
         return this.repository.findAll();
