@@ -1,12 +1,10 @@
 package com.projeto.tcc.controller;
 
-
 import com.projeto.tcc.model.Agenda;
 import com.projeto.tcc.service.agendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
