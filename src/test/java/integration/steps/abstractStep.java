@@ -3,7 +3,7 @@ package integration.steps;
 
 import com.projeto.tcc.TccApplication;
 import io.cucumber.java.en_old.Ac;
-import io.cucumber.spring.CucumberContextConfiguration;
+//import io.cucumber.spring.CucumberContextConfiguration;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -19,12 +19,12 @@ import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 
-@RunWith(SpringRunner.class)
-@CucumberContextConfiguration
-@SpringBootTest(classes = {TccApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+//@RunWith(SpringRunner.class)
+//@CucumberContextConfiguration
+//@SpringBootTest(classes = {TccApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 //@ActiveProfiles("test")
-@TestPropertySource(properties = {"server.port=8081"})
-@ContextConfiguration(classes = {TccApplication.class})
+//@TestPropertySource(properties = {"server.port=8081"})
+//@ContextConfiguration(classes = {TccApplication.class})
 public class abstractStep {
 
     private String host  = "http://localhost:";
@@ -114,13 +114,13 @@ public class abstractStep {
     }
 
     private String searchJsonRequest(String json) throws IOException {
-        String jsonRequest = String.join("", Files.readAllLines(Paths.get("src/test/resources/payloads/request/"+json)));
+        String jsonRequest = String.join("", Files.readAllLines(Paths.get("src/test/resources/payloads/request/"+json+".json")));
 
         return jsonRequest;
     }
 
     private String searchJsonResponse(String json) throws IOException {
-        String jsonResponse = String.join("", Files.readAllLines(Paths.get("src/test/resources/payloads/response/"+json)));
+        String jsonResponse = String.join("", Files.readAllLines(Paths.get("src/test/resources/payloads/response/"+json+".json")));
 
         return jsonResponse;
     }
